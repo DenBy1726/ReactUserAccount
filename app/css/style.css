@@ -1,0 +1,56 @@
+html{
+    height: 100%;
+}
+body {
+    height: 100%;
+    font: 16px Helvetica, sans-serif;
+    margin: 0;
+}
+
+label,a{
+    margin-left:5px;
+    text-decoration: none;
+}
+
+#userContainer{
+    width: 350px;
+    height: inherit;
+    left: 0;
+    background-color: navajowhite;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+}
+
+#userInfo{
+
+    width: 75%;
+    margin: 20px auto;
+}
+
+
+.userAvatar{
+    width:100%;
+    height:100%;
+    border-radius: 15px;
+}
+
+h2,h3{
+    font:inherit;
+    margin-top:5px;
+}
+
+h2{
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom:5px;
+}
+
+.userContact{
+    margin:5px 0  5px 0;
+}
+
+.fa{
+    color: #777;
+    margin: 5px 0 5px 0;
+}
