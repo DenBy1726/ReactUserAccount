@@ -7,19 +7,34 @@ body {
     margin: 0;
 }
 
+div#appContainer{
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    height:inherit;
+}
+
 label,a{
     margin-left:5px;
     text-decoration: none;
 }
 
 #userContainer{
-    width: 350px;
+    width: 500px;
     height: inherit;
     left: 0;
     background-color: navajowhite;
     display: flex;
     align-content: center;
     flex-direction: column;
+}
+
+#tabContainer{
+    width: 100%;
+}
+
+#collapsedUserContainer{
+    width:5%;
 }
 
 #userInfo{
@@ -52,5 +67,16 @@ h2{
 
 .fa{
     color: #777;
-    margin: 5px 0 5px 0;
+    margin: 5px 5px 5px 0;
+}
+
+.fa-edit{
+    cursor: pointer;
+    horiz-align :right;
+}
+
+.editDivTab{
+    width:80px;
+    height:40px;
+    margin-left: 95%;
 }

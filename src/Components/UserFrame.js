@@ -1,6 +1,9 @@
 import React from 'react';
 import IconLabel from './IconLabel.js';
 class UserFrame extends React.Component{
+    constructor(){
+        super();
+    }
     render(){
        return <div>
            <img className="userAvatar" src={this.props.image} alt={this.props.alt}/>
@@ -12,7 +15,12 @@ class UserFrame extends React.Component{
            <IconLabel  icon="map-marker" text={this.props.address}/>
            <IconLabel  icon="envelope" href={"mailto:"+this.props.mail} text={this.props.mail} />
            <IconLabel icon="twitter" href={this.props.twitter} text={this.props.twitter}/>
+
         </div>
+    }
+
+    click(){
+
     }
 }
 

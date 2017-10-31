@@ -4,6 +4,7 @@ import Icon from './Components/Icon.js'
 import IconLabel from './Components/IconLabel.js';
 import UserFrame from './Components/UserFrame.js';
 import JUserFrame from './Components/JUserFrame.js';
+import {TabControl,Tab} from "./Components/TabControl.js";
 
 /*ReactDOM.render(
     <Icon icon="asterisk"/>,
@@ -37,3 +38,22 @@ function getText(file){
 }
 getText( "./app/resource/dnal.json");
 
+
+
+ReactDOM.render(
+    <TabControl >
+        <Tab display="Основные">
+            <div className="editDivTab"><IconLabel  icon="edit fa-2x" /></div>
+            <div className="TabContent"/>
+        </Tab>
+        <Tab display="Образование">
+            <div className="editDivTab"><IconLabel  icon="edit fa-2x" /></div>
+            <div className="TabContent"/>
+        </Tab>
+        <Tab display="Контакты">
+            <div className="editDivTab"><IconLabel  icon="edit fa-2x" /></div>
+            <div className="TabContent"/>
+        </Tab>
+    </TabControl>,
+    document.getElementById("tabContainer")
+);

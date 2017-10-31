@@ -1,0 +1,65 @@
+.TabbedArea {
+    margin: 0;
+    width: 100%;
+    height:100%;
+    font-family: sans-serif;
+    color: #555;
+    font-size: 14px;
+    line-height: 24px;
+    border:0 solid;
+}
+.Tab li {
+    float: left;
+    width: 20%;
+}
+.Tab a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #888;
+    padding: 10px 0;
+    border-bottom: 2px solid #888;
+}
+
+.Tab a:hover{
+    background: #ddd;
+}
+
+.Tab a.active{
+    border-bottom: 2px solid darkorange;
+}
+
+.TabPane {
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    height: 100%;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul.Tab.clearfix{
+    margin: 0;
+    padding: 0;
+}
+
+ul.Tab{
+    list-style-type: none;
+}
+
+a{
+    margin:0;
+}
+
+.TabContent{
+    border:1px  solid #aaa;
+    height:90%;
+
+}
+
+section{
+    height:89%;
+}
