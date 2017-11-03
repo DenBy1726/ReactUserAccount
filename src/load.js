@@ -6,16 +6,6 @@ import UserFrame from './Components/UserFrame.js';
 import JUserFrame from './Components/JUserFrame.js';
 import {TabControl,Tab} from "./Components/TabControl.js";
 
-/*ReactDOM.render(
-    <Icon icon="asterisk"/>,
-    document.getElementById("iconCont"),
-    console.log("fsdf")
-);*/
-/*ReactDOM.render(
-    <IconLabel icon="asterisk" text="hello" href="127.0.0.0:0000"/>,
-    document.getElementById("iconCont"),
-    console.log("fsdf")
-);*/
 
 function getText(file){
     // read text from URL location
@@ -42,17 +32,23 @@ getText( "./app/resource/dnal.json");
 
 ReactDOM.render(
     <TabControl >
-        <Tab display="Основные">
+        <Tab text="Основные">
             <div className="editDivTab"><IconLabel  icon="edit fa-2x" /></div>
-            <div className="TabContent"/>
+            <div className="TabContent">
+                <h3>Холост</h3>
+            </div>
         </Tab>
-        <Tab display="Образование">
+        <Tab text="Образование">
             <div className="editDivTab"><IconLabel  icon="edit fa-2x" /></div>
-            <div className="TabContent"/>
+            <div className="TabContent">
+                <h3>Незаконченное высшее</h3>
+            </div>
         </Tab>
-        <Tab display="Контакты">
+        <Tab text="Контакты">
             <div className="editDivTab"><IconLabel  icon="edit fa-2x" /></div>
-            <div className="TabContent"/>
+            <div className="TabContent">
+                <h3>В анкете</h3>
+            </div>
         </Tab>
     </TabControl>,
     document.getElementById("tabContainer")

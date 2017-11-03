@@ -1,9 +1,8 @@
 import React from 'react';
 import IconLabel from './IconLabel.js';
+
+//компонент информации о пользователе
 class UserFrame extends React.Component{
-    constructor(){
-        super();
-    }
     render(){
        return <div>
            <img className="userAvatar" src={this.props.image} alt={this.props.alt}/>
@@ -18,11 +17,8 @@ class UserFrame extends React.Component{
 
         </div>
     }
-
-    click(){
-
-    }
 }
 
 UserFrame.defaultProps = {alt:"Картинка"};
+
 export default UserFrame;

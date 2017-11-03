@@ -1,6 +1,7 @@
 import React from 'react'
 import UserFrame from "./UserFrame";
 
+//UserFrame который распаковывается из JSON
 class JUserFrame extends React.Component{
     render(){
         const data = JSON.parse(this.props.json);

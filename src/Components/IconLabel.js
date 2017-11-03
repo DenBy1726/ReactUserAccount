@@ -2,6 +2,7 @@ import React from 'react';
 import Icon from './Icon.js'
 import ExLabel from './Label.js'
 
+//компонент отрисовывает Icon с текстом
 class IconLabel extends React.Component{
     render(){
         return  <div>

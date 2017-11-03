@@ -1,6 +1,7 @@
 import React from "react"
 import classNames from 'classnames';
 
+//панель вкладок
 class TabControl extends React.Component {
     constructor(props) {
         super(props);
@@ -17,15 +18,18 @@ class TabControl extends React.Component {
 
     render() {
         let self = this;
+
+        //получаем список табов
         let tabNodes = self.props.children.map(function (child, index) {
             let className = classNames({'active': self.state.activeIndex === index});
             return (
                 <li onClick={self.onClick.bind(this, index)}>
-                    <a className={className} href="#">{child.props.display}</a>
+                    <a className={className} href="#">{child.props.text}</a>
                 </li>
             );
         });
 
+        //получаем активную вкладку
         let contentNodes = self.props.children.map(function (child, index) {
             if (self.state.activeIndex === index) {
                 return (
@@ -50,6 +54,7 @@ class TabControl extends React.Component {
 
 }
 
+//вкладка
 class Tab extends React.Component{
     render() {
         let active = this.props.active || false;
