@@ -13,19 +13,14 @@ export default class App extends React.Component{
         this.state = {};
     }
 
-    componentWillMount(){
-        let request = new XMLHttpRequest();
+    componentWillMount() {
         let that = this;
-        request.open('GET', "./app/resource/dnal.json", true);
-        request.send(null);
-        request.onreadystatechange = function () {
-            if (request.readyState === 4 && request.status === 200) {
-                let type = request.getResponseHeader('Content-Type');
-                if (type.indexOf("text") !== 1) {
-                    that.setState({data : JSON.parse(request.responseText)});
-                }
-            }
-        }
+        fetch('https://api.github.com/users/octocat').then(response => {
+            response.json().then(data => {
+                console.log(data);
+                that.setState({data});
+            });
+        })
     }
 
     render(){
@@ -37,8 +32,8 @@ export default class App extends React.Component{
             <div>
                 <div id="userContainer">
                     <div id="userInfo">
-                        <UserFrame image={data.image} name={data.name} alias={data.alias} desc={data.desc}
-                                   facebook={data.facebook} address={data.address} mail={data.mail} twitter={data.twitter}/>
+                        <UserFrame image={data.avatar_url} name={data.name} alias={data.login} desc={data.bio}
+                                   facebook={data.facebook} address={data.location} mail={data.email} twitter={data.twitter}/>
                     </div>
                 </div>
                 <div id="tabContainer">
