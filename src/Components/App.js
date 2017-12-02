@@ -8,63 +8,68 @@ import UserFrame from "./UserFrame";
 import {connect} from "react-redux"
 import * as actions from "../actions/action"
 import propTypes from "prop-types"
+import {Spin} from "antd"
+import 'antd/dist/antd.css';
 
 class App extends React.Component{
 
     constructor(props){
         super(props);
-        this.state = {};
+        this.url;
     }
 
     componentWillMount() {
-        this.props.upload('DenBy1726');
+        this.url = this.props.match.params.login;
+        this.props.upload(this.url);
+    }
+
+    shouldComponentUpdate(nextProps, nextState){
+        if(nextProps.match.params.login != this.url){
+            this.url = nextProps.match.params.login;
+            this.props.upload(this.url);
+            return false;
+        }
+        return true;
     }
 
     render(){
         let data = this.props.data;
-        switch(this.props.stage.title) {
-            case "LOADING":
-                return `...Loading data for ${this.props.stage.name}`;
-            case "ERROR":
-                console.log(this.props.stage.error);
-                return `Cannot upload ${this.props.stage.name}.
-                        Please check browser log to see details.`;
-            case "SUCCESS":
                 return (
-                    <div>
-                        <div id="userContainer">
-                            <div id="userInfo">
-                                <UserFrame image={data.avatar_url} name={data.name} alias={data.login} desc={data.bio}
-                                           facebook={data.facebook} address={data.location} mail={data.email}
-                                           twitter={data.twitter}/>
+                    <div id="dataContainer">
+                            <div id="userContainer">
+                                <Spin tip="Loading..." spinning={this.props.stage.loading}>
+                                    <div id="userInfo">
+                                        <UserFrame image={data.avatar_url} name={data.name} alias={data.login} desc={data.bio}
+                                                   address={data.location} mail={data.email}
+                                                   blog={data.blog} company={data.company} created={data.created_at}/>
+                                    </div>
+                                </Spin>
                             </div>
-                        </div>
-                        <div id="tabContainer">
-                            <TabControl >
-                                <Tab text="Основные">
-                                    <div className="editDivTab"><IconLabel icon="edit fa-2x"/></div>
-                                    <div className="TabContent">
-                                        <h3>Холост</h3>
-                                    </div>
-                                </Tab>
-                                <Tab text="Образование">
-                                    <div className="editDivTab"><IconLabel icon="edit fa-2x"/></div>
-                                    <div className="TabContent">
-                                        <h3>Незаконченное высшее</h3>
-                                    </div>
-                                </Tab>
-                                <Tab text="Контакты">
-                                    <div className="editDivTab"><IconLabel icon="edit fa-2x"/></div>
-                                    <div className="TabContent">
-                                        <h3>В анкете</h3>
-                                    </div>
-                                </Tab>
-                            </TabControl>
+                            <div id="tabContainer">
+                                <TabControl >
+                                    <Tab text="Основные">
+                                        <div className="editDivTab"><IconLabel icon="edit fa-2x"/></div>
+                                        <div className="TabContent">
+                                            <h3>Холост</h3>
+                                        </div>
+                                    </Tab>
+                                    <Tab text="Образование">
+                                        <div className="editDivTab"><IconLabel icon="edit fa-2x"/></div>
+                                        <div className="TabContent">
+                                            <h3>Незаконченное высшее</h3>
+                                        </div>
+                                    </Tab>
+                                    <Tab text="Контакты">
+                                        <div className="editDivTab"><IconLabel icon="edit fa-2x"/></div>
+                                        <div className="TabContent">
+                                            <h3>В анкете</h3>
+                                        </div>
+                                    </Tab>
+                                </TabControl>
                         </div>
                     </div>
                 )
         }
-    }
 }
 
 App.propTypes = {

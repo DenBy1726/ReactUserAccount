@@ -9,6 +9,7 @@ export function upload(login){
             response => {
                 response.json().then(data => {
                     dispatch(uploadEndSuccess(data));
+                    console.log(data);
                 });
         },
             error =>{

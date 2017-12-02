@@ -63,3 +63,11 @@ a{
 section{
     height:89%;
 }
+
+.ant-menu{
+    width:100%
+}
+
+.ant-menu-submenu{
+    width: 150px;
+}

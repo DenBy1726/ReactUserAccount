@@ -9,11 +9,10 @@ body {
 
 #appContainer > div{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     height:inherit;
 }
-
 
 
 label,a{
@@ -29,6 +28,11 @@ label,a{
     display: flex;
     align-content: center;
     flex-direction: column;
+}
+
+#dataContainer{
+    display: flex;
+    flex-direction: row;
 }
 
 #tabContainer{
@@ -82,3 +86,4 @@ h2{
     height:40px;
     margin-left: 95%;
 }
+
