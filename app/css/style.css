@@ -7,12 +7,14 @@ body {
     margin: 0;
 }
 
-div#appContainer{
+#appContainer > div{
     display:flex;
     flex-direction: row;
     align-content: center;
     height:inherit;
 }
+
+
 
 label,a{
     margin-left:5px;

@@ -7,16 +7,15 @@ module.exports = {
         publicPath: '/app/',
         filename: "bundle.js"       // название создаваемого файла
     },
-    module:{
-        rules:[   //загрузчик для jsx
-            {
-                test: /\.jsx?$/, // определяем тип файлов
-                exclude: /(node_modules)/,  // исключаем из обработки папку node_modules
-                loader: "babel-loader",   // определяем загрузчик
-                options:{
-                    presets:["env", "react"]    // используемые плагины
-                }
-            }
+    module: {
+        rules: [
+            { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+            { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         ]
-    }
+    },
+    devtool: 'inline-source-map',
+    devServer: {
+        port: 3000,
+        historyApiFallback: true
+    },
 }
